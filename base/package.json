@@ -1,0 +1,6 @@
+{
+    "name": "simple-framework-base",
+    "private": true,
+    "main": "../lib/base/index.js",
+    "module": "../es/base/index.js"
+  }

@@ -14,18 +14,28 @@ const plugins = isProd ? [new CleanWebpackPlugin()] : [
 module.exports = {
   mode: isProd ? 'production' : 'development',
   entry: {
-    index: './src/index.js',
-    utils: './src/utils/index'
+    index: './src/index.js'
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, './dist'),
     libraryTarget: isProd ? 'umd' : undefined,  // 包需要被module.exports，这就要用到common
   },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@static': path.resolve(__dirname, 'src/static'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@server': path.resolve(__dirname, 'src/server')
+    },
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/
       },
@@ -35,7 +45,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: [ 'css-loader', 'less-loader']
+        use: ['css-loader', 'less-loader']
       }
     ]
   },

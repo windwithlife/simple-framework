@@ -1,15 +1,25 @@
 import React from 'react';
 import { Menu } from 'antd';
-
+const { Item, SubMenu } = Menu;
 
 import './less/antMotionStyle.less'
 
-const { Item, SubMenu } = Menu;
+
+import {
+  MenuData
+} from './data.source';
+
 
 class HeaderMenu extends React.Component {
 
   constructor(props) {
     super(props);
+    if(props.menuData){
+      this.menuData = props.menuData;
+    }else{
+      this.menuData = MenuData;
+    }
+    
   
   }
 
@@ -17,13 +27,13 @@ class HeaderMenu extends React.Component {
    
   }
  
-
   render() {
-    let {RightContent, menuData, ...props } = this.props;
+    let {RightContent, ...props } = this.props;
+    let menuData = this.menuData;
     if(!menuData){
       menuData=[];
     }
-    console.log('menuData in headermenu-framework', menuData);
+    console.log('menuData in headermenu-framework v14', menuData);
     const navChildren = menuData.map((menuItem) => {
       const { name, children } = menuItem;
       if (children) {

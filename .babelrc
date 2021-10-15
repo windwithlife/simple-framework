@@ -6,13 +6,13 @@
     ["import", {
       "libraryName": "antd",
       "libraryDirectory": "es",
-      "style": "css"
-    }],
-    ["@babel/plugin-transform-modules-umd", {
-      "globals": {
-        "es6-promise": "Promise"
-      }
+      "style": true
     }]
+    // ["@babel/plugin-transform-modules-umd", {
+    //   "globals": {
+    //     "es6-promise": "Promise"
+    //   }
+    // }]
   ]
 
 }

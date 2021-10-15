@@ -1,18 +1,17 @@
 {
   "name": "simple-framework",
-  "version": "1.0.10",
-  "description": "just for test",
+  "version": "1.0.17",
+  "description": "simplify the UI lib",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
-    "dist",
     "lib",
     "es",
-    "utils"
+    "utils",
+    "base"
   ],
   "scripts": {
     "start": "export NODE_ENV='development' && webpack-dev-server --config webpack.config-dev.js",
-    "dev": "export NODE_ENV='development' && webpack-dev-server",
     "build": "export NODE_ENV='production' && webpack",
     "lib": "gulp lib",
     "es": "gulp es",
@@ -28,7 +27,13 @@
     "react-dom": "^16.3.0",
     "antd": "^4.16.13"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.22.0",
+    "enquire-js": "^0.2.1",
+    "rc-queue-anim": "^2.0.0",
+    "rc-scroll-anim": "^2.7.6",
+    "rc-tween-one": "^2.7.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
@@ -41,6 +46,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.3.0",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -49,8 +55,10 @@
     "less": "^4.1.2",
     "less-loader": "^10.0.1",
     "merge2": "^1.4.1",
+    
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "react-router-dom": "^5.3.0",
     "style-loader": "^3.3.0",
     "webpack": "^5.57.1",
     "webpack-cli": "^4.8.0",

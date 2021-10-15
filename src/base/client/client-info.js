@@ -1,39 +1,39 @@
-import __global from '../global';
+import __global from '../global/global';
 
 
 let data={};
 //****获取的设备信息数据
 function initializeDevice() {
-    if (typeof Taro == 'object') {
-        Taro.getNetworkType({
-            success: function (res) {
-                data['networkType'] = res.networkType
-            }
-        });
+    // if (typeof Taro == 'object') {
+    //     Taro.getNetworkType({
+    //         success: function (res) {
+    //             data['networkType'] = res.networkType
+    //         }
+    //     });
 
-        Taro.getSystemInfo({
-            success: function (res) {
-                if (res.errMsg == 'getSystemInfo:ok') {
-                    data['language'] = res.language;
-                    data['version'] = res.version;
-                    data['model'] = res.model; //'iPhone 6'
-                    data['pixelRatio'] = res.pixelRatio;
-                    data['windowWidth'] = res.windowWidth;
-                    data['windowHeight'] = res.windowHeight;
+    //     Taro.getSystemInfo({
+    //         success: function (res) {
+    //             if (res.errMsg == 'getSystemInfo:ok') {
+    //                 data['language'] = res.language;
+    //                 data['version'] = res.version;
+    //                 data['model'] = res.model; //'iPhone 6'
+    //                 data['pixelRatio'] = res.pixelRatio;
+    //                 data['windowWidth'] = res.windowWidth;
+    //                 data['windowHeight'] = res.windowHeight;
 
-                    data['system'] = res.system;
-                    data['platform'] = res.platform;
-                    data['ver'] = res.SDKVersion;
-                }
-            }
-        });
+    //                 data['system'] = res.system;
+    //                 data['platform'] = res.platform;
+    //                 data['ver'] = res.SDKVersion;
+    //             }
+    //         }
+    //     });
 
-    }
+    // }
 }
 
 function initClientData() {
-    if (typeof core == 'object') {
-        data['appID'] = __global.appID || '';
+    // if (typeof core == 'object') {
+        data['appId'] = __global.appId || '';
         //data['user'] = core.user;
 
         // if (core.mkt) {
@@ -91,7 +91,7 @@ function initClientData() {
         //     // }
 
         // }
-    }
+    // }
 }
 
 function createClientId(){

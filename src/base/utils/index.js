@@ -18,3 +18,6 @@
   
     return sex;
   }
+
+  export {logError} from './error'
+  export {logDebug} from './error'

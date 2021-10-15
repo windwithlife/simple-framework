@@ -3,7 +3,7 @@ import TweenOne from 'rc-tween-one';
 import { Menu } from 'antd';
 
 import HeaderMenu from './HeaderMenu'
-import './less/antMotionStyle.less'
+import './less/nav0.less'
 import {
   Nav00DataSource,
 } from './data.source';
@@ -48,8 +48,9 @@ class Header extends React.Component {
             
             <TweenOne
               {...dataSource.Menu}
+              
             >
-              <HeaderMenu menuData={menuData}/>
+              <HeaderMenu menuData={menuData}  menuClick={that.props.menuClick} style={that.props.style} />
             </TweenOne>
            
           </div>
