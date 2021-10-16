@@ -2,7 +2,7 @@
 
 import { Component } from "react";
 import UbtClient from "../ubt/ubt-client";
-import { logDebug } from "../utils/index";
+import { logDebug } from "../../utils/index";
 let ubt_instance = new UbtClient();
 
 export default class BasePage extends Component {

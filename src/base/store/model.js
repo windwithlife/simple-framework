@@ -3,7 +3,7 @@
 
 import axios from "axios";
 import { HTTP_STATUS } from '../constants/status'
-import { logError } from '../utils/error'
+import { logError } from '../../utils/error'
 import Storage from '../store/storage'
 import Client from '../client/client';
 let GATEWAY = 'https://api.zhangyongqiao.com';
