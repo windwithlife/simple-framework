@@ -7,7 +7,7 @@ import { Layout, Menu, Avatar, Select, Button, Breadcrumb } from 'antd';
 // import Basic from "./components/Basic"
 // import SimplePage from "./components/TestSimplePage"
 // import TestPage from "./components/TestPage"
-//  import TestSimplePage from "./components/TestSimplePage"
+import TestSimplePage from "./components/TestSimplePage"
 import {Header, Header3, Footer, Footer1, Block5, Block0, Block3 } from '../../src';
 import {logError} from '../../src/base';
 import { fixControlledValue } from 'antd/lib/input/Input';
@@ -53,6 +53,7 @@ export default class App extends Component {
               <Block0 id="Content0_0" />
 
               <Block5 />
+              <TestSimplePage></TestSimplePage>
             </Content>
             <Footer1>Footer</Footer1>
             <Footer>Footer</Footer>

@@ -45,12 +45,12 @@ class HeaderMenu extends React.Component {
   }
 
   handleClick = e => {
-    console.log('click ', e);
+    //console.log('click ', e);
     let clickedItem = findMenuItemByKey(this.menuData, e.key);
     if (this.props.menuClick){
       this.props.menuClick(clickedItem);
     }
-    console.log('match menu item', clickedItem);
+    //console.log('match menu item', clickedItem);
 
   }
   render() {

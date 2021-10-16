@@ -47,12 +47,15 @@ export default class Model {
   }
   
   composeFullUrl(url) {
-    let fullPath = GATEWAY;
-    if (this.bizPath){
-      fullPath = fullPath + this.bizPath + url;
-    }else{
-      fullPath = fullPath  + url;
+    let fullPath = '';
+    if(GATEWAY){
+      fullPath = fullPath + GATEWAY;
     }
+    if (this.bizPath){
+      fullPath = fullPath + this.bizPath;
+    }
+    
+    fullPath = fullPath  + url;
     //console.log('current url is ---->' + fullPath);
     return fullPath;
   }
