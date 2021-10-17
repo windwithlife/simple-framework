@@ -63,9 +63,8 @@ class HeaderMenu extends React.Component {
 
     const styles = HeaderMenu00.styles;
 
-    console.log('styles', styles);
-    console.log('menuData in headermenu-framework v16', menuData);
-    console.log('menuData', menuData);
+    // console.log('menuData in headermenu-framework v16', menuData);
+    // console.log('menuData', menuData);
     const navChildren = menuData.map((menuItem) => {
       const { name, children } = menuItem;
       if (children) {

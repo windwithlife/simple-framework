@@ -21,12 +21,12 @@ class Header extends React.Component {
 
  
   render() {
-    console.log('in header....')
+    //console.log('in header....')
     
     let that = this;
     const { RightContent, menuData, ...props } = this.props;
     const dataSource = Nav00DataSource;
-    console.log('menuData in header', menuData);
+    // console.log('menuData in header', menuData);
   
     return (
       

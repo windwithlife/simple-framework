@@ -29,7 +29,7 @@ class Content5 extends React.PureComponent {
     });
 
   render() {
-    console.log('in content5....')
+    //console.log('in content5....')
     const { ...props } = this.props;
     const dataSource = Content50DataSource ;//props;
     const data = dataSource.demoData;
