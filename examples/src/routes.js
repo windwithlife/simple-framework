@@ -7,11 +7,16 @@ import { Layout, Menu, Avatar, Select, Button, Breadcrumb } from 'antd';
 // import Basic from "./components/Basic"
 // import SimplePage from "./components/TestSimplePage"
 // import TestPage from "./components/TestPage"
-import TestSimplePage from "./components/TestSimplePage"
-import {Header, Header3, Footer, Footer1, Block5, Block0, Block3 } from '../../src';
-import {logError} from '../../src/base';
-import { fixControlledValue } from 'antd/lib/input/Input';
+// import TestSimplePage from "./components/TestSimplePage"
+// import {Header, Header3, Footer1, Block5, Block0, Block3 } from '../../src';
+// import { fixControlledValue } from 'antd/lib/input/Input';
 //import 'antd/dist/antd.css';
+import {Header} from "../../src/components/header";
+import { Block0,Block3,Block5 } from '../../src';
+// import Section from '../../src/components/section';
+// const {Block0,Block3,Block5} = Section;
+import '../../src/components/header/style'
+//import '../../src/components/section/style'
 
 
 const { SubMenu } = Menu;
@@ -44,19 +49,18 @@ export default class App extends Component {
           <Layout>
            
             <Header menuClick= {this.onMenuClick} logo='static/logo.svg' isMobile={this.state.isMobile} style={{color:'#fff',background:'#000'}}/> 
-            <Header3 isMobile={this.state.isMobile} />
+            {/* <Header3 isMobile={this.state.isMobile} /> */}
             {/* <Header33 isMobile={this.state.isMobile} /> */}
            
-            <Button type="primary" >test primary color</Button>
+            <Button type="primary" >test primary color33</Button>
             <Content>
               <Block3 />
               <Block0 id="Content0_0" />
 
               <Block5 />
-              <TestSimplePage></TestSimplePage>
+              {/* <TestSimplePage></TestSimplePage> */}
             </Content>
-            <Footer1>Footer</Footer1>
-            <Footer>Footer</Footer>
+            {/* <Footer1>Footer</Footer1> */}
           </Layout>
         </div>
       </Router>

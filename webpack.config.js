@@ -40,12 +40,22 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.less$/,
-        use: ['css-loader', 'less-loader']
+        test: /\.(css|less)$/,
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS
+        }, {
+          loader: 'less-loader', // compiles Less to CSS
+          options: {
+           
+            lessOptions: {
+              // modifyVars: { '@primary-color': '#bbb' },
+              javascriptEnabled: true
+            }
+
+          },
+        }]
       }
     ]
   },

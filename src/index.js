@@ -1,16 +1,16 @@
-export { default as NewButton } from './components/NewButton';
-export { default as Header } from './components/section/landing/Header0';
-export { default as Footer } from './components/layout/black/Footer0';
-export { default as Footer1 } from './components/section/landing/Footer1';
-// export { default as Header3 } from './components/section/landing/Nav3';
-export { default as Header3 } from './components/section/landing/Nav33';
-export { default as Block5 } from './components/section/landing/Content5';
-export { default as Block3 } from './components/section/landing/Content3';
-export { default as Block0 } from './components/section/landing/Content0';
+
+export { default as Header } from './components/header';
+export { default as Footer } from './components/footer';
+export { default as Block0 } from './components/block0';
+export { default as Block3 } from './components/block3';
+export { default as Block5 } from './components/block5';
+export { default as Section}  from './components/section';
+
+
 // "use strict";
 
 // const Simple = {
-//   get NewButton() { 
+//   get NewButton() { ßßßßß
 //     var module = require('./components/NewButton');
 //     return (module && module.__esModule)? module.default : module;
 //   },
