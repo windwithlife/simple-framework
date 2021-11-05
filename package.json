@@ -12,8 +12,8 @@
     "base"
   ],
   "scripts": {
-    "start": "set NODE_ENV='development' && webpack-dev-server --config webpack.config-dev.js",
-    "build": "set NODE_ENV='production' && webpack",
+    "start": "export NODE_ENV='development' && webpack-dev-server --config webpack.config-dev.js",
+    "build": "export NODE_ENV='production' && webpack",
     "lib": "gulp lib",
     "es": "gulp es",
     "prepublish": "gulp"
