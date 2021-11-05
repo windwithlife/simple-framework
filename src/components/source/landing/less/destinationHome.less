@@ -1,0 +1,181 @@
+.ContainerDiv{
+  width : 100%;
+  overflow-x: auto;
+}
+html {
+  font-size: 100px;
+  font-size: 26.67vw;
+}
+body { margin: 0 }
+@ContainerWH: 1rem;
+@transformScale: 0.85;
+@oneContainerWH :1.1rem;
+@sixContainerWH :6.5rem;
+.ComponentDestinationHomeImageList{
+  /*display :flex;*/
+  height:@ContainerWH;
+  width:@sixContainerWH;
+  /*overflow : hidden;*/
+  .Component_img_dom{
+    width :@ContainerWH;
+    height:@ContainerWH;
+    border-radius : 0.2rem;
+    /* overflow:hidden;*/
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    float :left;
+    p{
+      color:#333;
+      display:table;
+      padding:0.01rem  0.0625rem;
+      background:white;
+      margin:0.5rem 0 0 0.125rem;
+      font-size:0.15rem
+    }
+    h6{
+      color:#dedede;
+      display:table;
+      padding:0.01rem  0.1rem;
+      background:#333;
+      margin:0 0 0 0.125rem;
+      font-size:0.1rem
+    }
+  }
+  .transform_scale_top{
+    transform:scale(@transformScale,@transformScale);
+    -webkit-transform:scale(@transformScale,@transformScale);  /*兼容-webkit-引擎浏览器*/
+    -moz-transform:scale(@transformScale,@transformScale);     /*兼容-moz-引擎浏览器*/
+    transform-origin: 100% 0;
+  }
+  .transform_scale_bottom{
+    transform:scale(@transformScale,@transformScale);
+    -webkit-transform:scale(@transformScale,@transformScale);  /*兼容-webkit-引擎浏览器*/
+    -moz-transform:scale(@transformScale,@transformScale);     /*兼容-moz-引擎浏览器*/
+    transform-origin: 0 100%;
+  }
+  .transform_scale_zero_to_big{
+    animation: animate 1s;
+    -moz-animation: animate 1s;	/* Firefox */
+    -webkit-animation: animate 1s;	/* Safari 和 Chrome */
+    -o-animation: animate 1s;	/* Opera */
+    transform-origin: 0 100%;
+    width :@ContainerWH;
+  }
+  @keyframes animate{
+    0% {
+      transform:scale(0,0);
+      -webkit-transform:scale(0,0);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(0,0);     /*兼容-moz-引擎浏览器*/
+      width : 0;
+      opacity :0
+    }
+    10%{
+      opacity :0
+    }
+    70% {
+      transform:scale(1.1,1.1);
+      -webkit-transform:scale(1.1,1.1);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(1.1,1.1);     /*兼容-moz-引擎浏览器*/
+      width : @oneContainerWH
+    }
+    100%{
+      transform:scale(1,1);
+      -webkit-transform:scale(1,1);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(1,1);     /*兼容-moz-引擎浏览器*/
+      width :@ContainerWH;
+      opacity :1
+    }
+  }
+  .transform_scale_zero_to_small{
+    animation: animate2 1s;
+    -moz-animation: animate2 1s;	/* Firefox */
+    -webkit-animation: animate2 1s;	/* Safari 和 Chrome */
+    -o-animation: animate2 1s;	/* Opera */
+    transform-origin: 100% 0;
+    width :@ContainerWH;
+  }
+  @keyframes animate2{
+    0% {
+      transform:scale(0,0);
+      -webkit-transform:scale(0,0);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(0,0);     /*兼容-moz-引擎浏览器*/
+      width : 0;
+      transform-origin: 0 0;
+      opacity : 0
+    }
+    10%{
+      opacity :0
+    }
+    70% {
+      transform:scale(1.1 * @transformScale ,1.1 * @transformScale);
+      -webkit-transform:scale(1.1 * @transformScale ,1.1 * @transformScale);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(1.1 * @transformScale ,1.1 * @transformScale);     /*兼容-moz-引擎浏览器*/
+      width : @oneContainerWH
+    }
+    100%{
+      transform:scale( @transformScale , @transformScale);
+      -webkit-transform:scale( @transformScale , @transformScale);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(@transformScale , @transformScale);     /*兼容-moz-引擎浏览器*/
+      width :@ContainerWH;
+      transform-origin: 100% 0;
+      opacity :1
+    }
+  }
+  .transform_scale_small_to_big{
+    animation: animate3 1s;
+    -moz-animation: animate3 1s;	/* Firefox */
+    -webkit-animation: animate3 1s;	/* Safari 和 Chrome */
+    -o-animation: animate3 1s;	/* Opera */
+  }
+  @keyframes animate3{
+    0% {
+      transform:scale( @transformScale , @transformScale);
+      -webkit-transform:scale( @transformScale , @transformScale);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(@transformScale , @transformScale);     /*兼容-moz-引擎浏览器*/
+    }
+    100%{
+      transform:scale(1,1);
+      -webkit-transform:scale(1,1);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(1,1);     /*兼容-moz-引擎浏览器*/
+    }
+  }
+  .transform_scale_big_to_small{
+    animation: animate4 1s;
+    -moz-animation: animate4 1s;	/* Firefox */
+    -webkit-animation: animate4 1s;	/* Safari 和 Chrome */
+    -o-animation: animate4 1s;	/* Opera */
+  }
+  @keyframes animate4{
+    0% {
+      transform:scale(1,1);
+      -webkit-transform:scale(1,1);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(1,1);     /*兼容-moz-引擎浏览器*/
+    }
+    100%{
+      transform:scale( @transformScale , @transformScale);
+      -webkit-transform:scale( @transformScale , @transformScale);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(@transformScale , @transformScale);     /*兼容-moz-引擎浏览器*/
+    }
+  }
+  .Component_img_dom_box{
+    width :@ContainerWH;
+    height :@ContainerWH;
+    overflow : hidden
+  }
+  .Component_img_dom_remove{
+    animation: animate5 0.8s;
+    -moz-animation: animate5 0.8s;	/* Firefox */
+    -webkit-animation: animate5 0.8s;	/* Safari 和 Chrome */
+    -o-animation: animate5 0.8s;	/* Opera */
+    width : 0;
+  }
+  @keyframes animate5{
+    0% {
+      width :@ContainerWH;
+    }
+    100%{
+      width :0;
+    }
+  }
+}
