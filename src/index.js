@@ -6,7 +6,7 @@ export { default as Block0 } from './components/block0';
 export { default as Block3 } from './components/block3';
 export { default as Block5 } from './components/block5';
 export { default as Section}  from './components/section';
-
+export { default as DestinationHome}  from './components/destinationHome';
 
 // "use strict";
 
@@ -15,11 +15,11 @@ export { default as Section}  from './components/section';
 //     var module = require('./components/NewButton');
 //     return (module && module.__esModule)? module.default : module;
 //   },
-//   get Header() { 
+//   get Header() {
 //     var module = require('./components/layout/black/Header0');
 //     return (module && module.__esModule)? module.default : module;
 //   },
-//   get Footer() { 
+//   get Footer() {
 //     var module = require('./components/layout/black/Footer0');
 //     return (module && module.__esModule)? module.default : module;
 //   },

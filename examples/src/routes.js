@@ -12,7 +12,7 @@ import { Layout, Menu, Avatar, Select, Button, Breadcrumb } from 'antd';
 // import { fixControlledValue } from 'antd/lib/input/Input';
 //import 'antd/dist/antd.css';
 import {Header} from "../../src/components/header";
-import { Block0,Block3,Block5 } from '../../src';
+import { Block0,Block3,Block5,DestinationHome } from '../../src';
 // import Section from '../../src/components/section';
 // const {Block0,Block3,Block5} = Section;
 import '../../src/components/header/style'
@@ -47,17 +47,18 @@ export default class App extends Component {
       <Router>
         <div>
           <Layout>
-           
-            <Header menuClick= {this.onMenuClick} logo='static/logo.svg' isMobile={this.state.isMobile} style={{color:'#fff',background:'#000'}}/> 
+
+            <Header menuClick= {this.onMenuClick} logo='static/logo.svg' isMobile={this.state.isMobile} style={{color:'#fff',background:'#000'}}/>
             {/* <Header3 isMobile={this.state.isMobile} /> */}
             {/* <Header33 isMobile={this.state.isMobile} /> */}
-           
+
             <Button type="primary" >test primary color33</Button>
             <Content>
               <Block3 />
               <Block0 id="Content0_0" />
 
               <Block5 data={{title:{main:'测试主题'}}} vonItemClick={(item)=>{console.log(item)}} />
+              <DestinationHome />
               {/* <TestSimplePage></TestSimplePage> */}
             </Content>
             {/* <Footer1>Footer</Footer1> */}
