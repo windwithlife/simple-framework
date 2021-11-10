@@ -356,7 +356,7 @@ export const Content50DataSource = {
   demoData: {
     title: {
       main: "客户案例",
-      sub: "在这里用一段话介绍服务的案例情况",
+      subTitle: "在这里用一段话介绍服务的案例情况",
     },
     itemsData: [
       {

@@ -4,22 +4,19 @@ import { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { getChildrenToRender } from './utils';
 import {
-  Nav30DataSource,
-  Banner01DataSource,
-  Content00DataSource,
+
   Content50DataSource,
-  Content30DataSource,
-  Footer10DataSource,
+ 
 } from './data.source';
 import './less/content5.less'
 
 class Content5 extends React.PureComponent {
   getChildrenToRender = (data,itemStyle) =>
-    data.map((item) => {
+    data.map((item,i) => {
       return (
-        <Col key={item.name} {...itemStyle}>
+        <Col  key={item.name} {...itemStyle}>
           <a {...itemStyle.itemLink}>
-            <span {...itemStyle.img}>
+            <span onClick={()=>{this.props.onItemClick(item)}}  {...itemStyle.img}>
               <img src={item.img} height="100%" alt="img" />
             </span>
             <p {...itemStyle.content}>{item.content}</p>
@@ -29,10 +26,16 @@ class Content5 extends React.PureComponent {
     });
 
   render() {
-    //console.log('in content5....')
+    console.log('in content5....')
     const { ...props } = this.props;
-    const dataSource = Content50DataSource ;//props;
-    const data = dataSource.demoData;
+    const dataSource = Content50DataSource ;
+    let data = dataSource.demoData;
+    if(props.data){
+      data= props.data;
+      if(!data.itemsData || data.itemsData.length < 1){
+        data.itemsData = dataSource.demoData.itemsData;
+      }
+    }
     const styles = dataSource.styles;
  
     delete props.isMobile;
@@ -45,7 +48,7 @@ class Content5 extends React.PureComponent {
         <div {...styles.page}>
           <div key="title" {...styles.title.titleWrapper}>
             <h1>{data.title.main}</h1>
-            <div>{data.title.sub}</div>
+            {data.title.subTitle && <div>{data.title.subTitle}</div>}
           </div>
           <OverPack
             // className={`content-template ${props.className}`}

@@ -57,7 +57,7 @@ export default class App extends Component {
               <Block3 />
               <Block0 id="Content0_0" />
 
-              <Block5 />
+              <Block5 data={{title:{main:'测试主题'}}} vonItemClick={(item)=>{console.log(item)}} />
               {/* <TestSimplePage></TestSimplePage> */}
             </Content>
             {/* <Footer1>Footer</Footer1> */}
