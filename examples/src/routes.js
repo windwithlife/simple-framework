@@ -11,11 +11,14 @@ import { Layout, Menu, Avatar, Select, Button, Breadcrumb } from 'antd';
 // import {Header, Header3, Footer1, Block5, Block0, Block3 } from '../../src';
 // import { fixControlledValue } from 'antd/lib/input/Input';
 //import 'antd/dist/antd.css';
-import {Header} from "../../src/components/header";
-import { Block0,Block3,Block5,DestinationHome } from '../../src';
+import Header from "../../src/components/header";
+import { DestinationHome,Block5,Block3,Block0,Header0 } from '../../src';
 // import Section from '../../src/components/section';
 // const {Block0,Block3,Block5} = Section;
 import '../../src/components/header/style'
+import '../../src/components/block5/style'
+import '../../src/components/block3/style'
+
 //import '../../src/components/section/style'
 
 
@@ -49,19 +52,25 @@ export default class App extends Component {
           <Layout>
 
             <Header menuClick= {this.onMenuClick} logo='static/logo.svg' isMobile={this.state.isMobile} style={{color:'#fff',background:'#000'}}/>
-            {/* <Header3 isMobile={this.state.isMobile} /> */}
-            {/* <Header33 isMobile={this.state.isMobile} /> */}
-
-            <Button type="primary" >test primary color33</Button>
+         
+            <Button type="primary" >test primary color333</Button>
+            <Header0 menuClick= {this.onMenuClick} logo='static/logo.svg' isMobile={this.state.isMobile} style={{color:'#fff',background:'#000'}}/>
             <Content>
-              <Block3 />
+              {/* <Block3 /> */}
+              {/*
               <Block0 id="Content0_0" />
+ 
+              <Block5 data={{title:{main:'测试主题'}}} onItemClick={(item)=>{console.log(item)}} />
+               */}
 
-              <Block5 data={{title:{main:'测试主题'}}} vonItemClick={(item)=>{console.log(item)}} />
+<Block0 id="Content0_0" />
+ 
+               <Block3 /> 
+               <Block5 data={{title:{main:'测试主题好'}}} onItemClick={(item)=>{console.log(item)}} />
               <DestinationHome />
-              {/* <TestSimplePage></TestSimplePage> */}
+           
             </Content>
-            {/* <Footer1>Footer</Footer1> */}
+      
           </Layout>
         </div>
       </Router>

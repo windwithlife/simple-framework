@@ -1,2 +1,2 @@
 
-export {default} from '../source/landing/destinationHome';
+export {default} from './src/destinationHome';

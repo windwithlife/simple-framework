@@ -16,7 +16,6 @@ export default class Model {
     }
   }
   saveToken(token) {
-    //localStorage.setItem('web_token', token);
     Storage.saveToken(token);
   }
   clearToken() {

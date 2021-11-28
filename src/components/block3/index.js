@@ -6,4 +6,4 @@
 // Section.Block3 = Block3;
 // Section.Block5 = Block5;
 // export default Section;
-export {default} from '../source/landing/Content3';
+export {default} from './src/Content3';

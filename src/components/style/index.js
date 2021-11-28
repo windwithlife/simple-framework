@@ -1,1 +1,1 @@
-import '../source/landing/less/all.less';
+import './all.less';

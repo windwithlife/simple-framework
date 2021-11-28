@@ -1,2 +1,2 @@
-export { default as Header} from '../source/landing/Header0';
-export { default } from '../source/landing/Header0';
+export { default as Header} from './src/Header0';
+export { default } from './src/Header0';

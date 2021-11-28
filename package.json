@@ -1,6 +1,6 @@
 {
   "name": "simple-framework",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "description": "simplify the UI lib",
   "main": "lib/index.js",
   "module": "es/index.js",

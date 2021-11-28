@@ -1,5 +1,5 @@
 
-import '../../source/landing/less/destinationHome.less';
+import './destinationHome.less';
 
 
 
