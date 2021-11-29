@@ -6,13 +6,15 @@ import { HTTP_STATUS } from '../constants/status'
 import { logError } from '../../utils/error'
 import Storage from '../store/storage'
 import Client from '../client/client';
-let GATEWAY = 'https://api.zhangyongqiao.com';
 
 export default class Model {
   bizPath;
   constructor(props){
-    if (props?.bizPath){
+    if (props && props.bizPath) {
       this.bizPath = props.bizPath;
+    }
+    if (props && props.gateway) {
+      this.gateway = props.gateway;
     }
   }
   saveToken(token) {
@@ -46,16 +48,17 @@ export default class Model {
   }
   
   composeFullUrl(url) {
-    let fullPath = '';
-    if(GATEWAY){
-      fullPath = fullPath + GATEWAY;
+    let fullPath = "";
+    if (this.gateway) {
+      fullPath = this.gateway;
     }
-    if (this.bizPath){
-      fullPath = fullPath + this.bizPath;
+
+    if (this.bizPath) {
+      fullPath = fullPath + this.bizPath + url;
+    } else {
+      fullPath = fullPath + url;
     }
-    
-    fullPath = fullPath  + url;
-    //console.log('current url is ---->' + fullPath);
+    console.log('current url is ---->' + fullPath);
     return fullPath;
   }
 

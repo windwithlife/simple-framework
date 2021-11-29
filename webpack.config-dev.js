@@ -5,7 +5,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 每次构建清除上一次打包出来的文件
 const nodeExternals = require('webpack-node-externals');
-const plugins = isProd ? [new CleanWebpackPlugin()] : [
+const plugins = isProd ? [new CleanWebpackPlugin(),
+  new HtmlWebpackPlugin({
+    template: 'examples/src/template/index.html',
+    fileName: 'index.html',
+    inject: true
+}),
+new copyWebpackPlugin({
+    patterns: [{
+        from: path.resolve(__dirname, 'examples/src/static'),
+        to:'static'
+    }]
+})] : [
   new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     template: 'examples/src/template/index.html'
@@ -23,9 +34,7 @@ module.exports = {
   entry: './examples/src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './build'),
-
-    libraryTarget: isProd ? 'umd' : undefined,  // 包需要被module.exports，这就要用到common
+    path: path.resolve(__dirname, './examples/build'),
   },
   resolve: {
     alias: {

@@ -5,16 +5,22 @@ import client from '../client/client';
 export default class UbtClient {
     constructor(props){
      
+        if(props && props.gateway){
+            this.gateway = props.gateway;
+        }else{
+            this.gateway = "https://api.zhangyongqiao.com";
+        }
+        this.bizPath= '/common-service/ubt';
+        if (props && props.bizPath){
+            this.bizPath = props.bizPath;
+        }
     }
     send=(type,params)=>{
-        let bizPath= '/common-service/ubt';
-        if(!params){
-            params = {};
-        }
+        
         params.type=type;
         params.clientInfo = client.getClientInfo();
-        console.log('ubt info--->', params);
-        return new Model({bizPath}).fetch_post('/ubt-bg.gif', params, {});
+        return new Model({gateway:this.gateway,bizPath:this.bizPath}).fetch_post('/ubt-bg.gif', params, {});
+  
     }
     ubtTrace=(params)=>{
         this.send('TRACE',params);

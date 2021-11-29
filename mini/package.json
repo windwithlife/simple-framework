@@ -1,6 +1,0 @@
-{
-    "name": "simple-framework-mobile",
-    "private": true,
-    "main": "../lib/mobile/index.js",
-    "module": "../es/mobile/index.js"
-  }

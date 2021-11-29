@@ -6,8 +6,19 @@ import { logDebug } from "../../utils/index";
 let ubt_instance = new UbtClient();
 
 export default class BasePage extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
+        if (props && props.gateway){
+            this.gateway = props.gateway;
+        }else{
+            this.gateway ='';
+        }
+        if (props && props.bizPath){
+            this.bizPath = props.bizPath;
+        }else{
+            this.bizPath ='';
+        }
+        this.ubt_instance = new UbtClient({gateway:this.gateway,bizPath: this.bizPath});
     }
     componentDidMount() {
         this.sendPV();
@@ -17,14 +28,17 @@ export default class BasePage extends Component {
     }
     params() {
         let params = {};
-        if (this.props.match.params) {
-            params = { ...params, ...this.props.match.params };
-        }
+        // if (this.props.match.params) {
+        //     params = { ...params, ...this.props.match.params };
+        // }
         if (this.props.location.query) {
             params = { ...params, ...this.props.location.query };
         }
-        console.log('router pramas..', params);
+        //console.log('router pramas..', params);
         return params;
+    }
+    ubt=()=>{
+        return this.ubt_instance;
     }
 
     sendPV = () => {
@@ -33,12 +47,7 @@ export default class BasePage extends Component {
         }
 
     }
-    ubtTrace = (key, value) => {
-        ubt_instance.ubtTrace(key, value);
-    }
-    ubtMetric = () => {
-        ubt_instance.ubtMetric(key, value);
-    }
+    
     debugInfo = (name, info) => {
         logDebug(name, info);
     }
