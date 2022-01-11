@@ -1,6 +1,6 @@
 import React from 'react';
 
-import asyncComponent  from '../../../base/route/AsyncComponent';
+import asyncComponent from '../../../base/route/AsyncComponent';
 
 
 import HeaderMenu from './HeaderMenu'
@@ -14,54 +14,43 @@ import {
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    if (props.logo){
-      this.logoImage= props.logo;
-    }else{
-      this.logoImage =Nav00DataSource.logo.children;
+    if (props.logo) {
+      this.logoImage = props.logo;
+    } else {
+      this.logoImage = Nav00DataSource.logo.children;
     }
-   
+
   }
 
- 
+
   render() {
-    
+
     let that = this;
     const { RightContent, menuData, ...props } = this.props;
     const dataSource = Nav00DataSource;
 
-    const TweenOne = asyncComponent(()=>import('rc-tween-one'));
+    //const TweenOne = asyncComponent(()=>import('rc-tween-one'));
     return (
-      
-        <TweenOne
-          component="header"
-          animation={{ opacity: 0, type: 'from' }}
-          className={dataSource.wrapper.className}
-          style={that.props.style}
-          // {...props}
-        >
-          <div
-            {...dataSource.page}
-          >
-            <TweenOne
-              animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
-              className={dataSource.logo.className}
-            >
-              <img width="100%" src={that.logoImage} alt="img" />
-            </TweenOne>
-            
-            <TweenOne
-              className={dataSource.Menu.className}
-              
-            >
-              <HeaderMenu menuData={menuData}  menuClick={that.props.menuClick} style={that.props.style} />
-            </TweenOne>
-           
+
+      <div
+
+        className="header0-wrapper"
+        style={that.props.style}
+      >
+        <div className="home-page" >
+          <div className="header0-wrapper-logo" >
+            <img  src={that.logoImage} alt="img" />
           </div>
-          
-         {RightContent && <RightContent />}
-        
-        </TweenOne>
-     
+
+          <div className="header0-menu" >
+            <HeaderMenu menuData={menuData} menuClick={that.props.menuClick} style={that.props.style} />
+          </div>
+        </div>
+        <div className="home-right">
+          {RightContent && <RightContent />}
+        </div>
+      </div>
+
     );
   }
 }

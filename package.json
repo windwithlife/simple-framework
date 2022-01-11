@@ -1,6 +1,6 @@
 {
   "name": "simple-framework",
-  "version": "1.0.48",
+  "version": "1.0.54",
   "description": "simplify the UI lib",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "start": "export NODE_ENV='development' && webpack-dev-server --config webpack.config-dev.js",
-    "build-creator": "export NODE_ENV='production' && webpack --config webpack.config-dev.js",
+    "build-creator": "export NODE_ENV='production' && webpack --config webpack.config-creator.js",
     "build": "export NODE_ENV='production' && webpack",
     "lib": "gulp lib",
     "es": "gulp es",

@@ -20,7 +20,7 @@ export default class Model {
   saveToken(token) {
     Storage.saveToken(token);
   }
-  clearToken() {
+  cleanToken() {
     Storage.clearToken();
     
   }
@@ -47,7 +47,7 @@ export default class Model {
     return res.data;
   }
   
-  composeFullUrl(url) {
+  composeFullUrl=(url)=>{
     let fullPath = "";
     if (this.gateway) {
       fullPath = this.gateway;
@@ -74,9 +74,9 @@ export default class Model {
             'token': this.getToken(),
         },
         method: 'get',
-        url: this.composeFullUrl(url),
+        url: that.composeFullUrl(url),
         params: params,
-    }).then(that.checkResponse)
+    }).then(that.checkResponse).catch((error)=>{console.log('fetch get error-->',error)});
    
     return result;
   }
@@ -91,9 +91,9 @@ export default class Model {
             'token': this.getToken(),
         },
         method: 'post',
-        url:this.composeFullUrl(url),
+        url:that.composeFullUrl(url),
         data: params,
-    }).then(that.checkResponse)
+    }).then(that.checkResponse).catch((error)=>{console.log('fetch post error-->',error)});
    
     return result;
 

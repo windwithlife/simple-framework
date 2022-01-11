@@ -111,7 +111,7 @@ class HeaderMenu extends React.Component {
       <Menu
         onClick={that.handleClick}
         mode={that.props.isMobile ? 'inline' : 'horizontal'}
-        theme="dark"
+        // theme="light"
         style={that.props.style}
       >
         {navChildren}
