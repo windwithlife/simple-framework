@@ -1,5 +1,5 @@
 import React from "react";
-import { WEEK_MAP } from './const'
+import { WEEK_MAP } from './../const'
 
 const Header = ({ day, showTodaylable = true }) => {
   return (

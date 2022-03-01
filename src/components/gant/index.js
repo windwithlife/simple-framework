@@ -1,2 +1,2 @@
-
-export { default } from '../source/landing/gant';
+import Gant from './src/index';
+export default Gant;
