@@ -2,44 +2,63 @@
   width : 100%;
   overflow-x: auto;
 }
-html {
-  font-size: 100px;
-  font-size: 26.67vw;
-}
 body { margin: 0 }
-@ContainerWH: 1rem;
+@ContainerWH: 15.4%;
 @transformScale: 0.85;
-@oneContainerWH :1.1rem;
-@sixContainerWH :6.5rem;
+@oneContainerWH :16.94%;
+@sixContainerWH :174%;
 .ComponentDestinationHomeImageList{
   /*display :flex;*/
-  height:@ContainerWH;
   width:@sixContainerWH;
+  position: relative;
+  &:before{
+    content: "";
+    padding-top: 15.67%;
+    display: block;
+  }
+  .ComponentDestinationHomeImageListPosition{
+     position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+  }
   /*overflow : hidden;*/
   .Component_img_dom{
     width :@ContainerWH;
-    height:@ContainerWH;
-    border-radius : 0.2rem;
+    border-radius : 5%;
     /* overflow:hidden;*/
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
+    position: relative;
     float :left;
-    p{
-      color:#333;
-      display:table;
-      padding:0.01rem  0.0625rem;
-      background:white;
-      margin:0.5rem 0 0 0.125rem;
-      font-size:0.15rem
+    &:before{
+      content: "";
+      padding-top: 100%;
+      display: block;
     }
-    h6{
-      color:#dedede;
-      display:table;
-      padding:0.01rem  0.1rem;
-      background:#333;
-      margin:0 0 0 0.125rem;
-      font-size:0.1rem
+    .Component_img_dom_box_title{
+      bottom:5%;
+      left:0;
+      position: absolute;
+      width: 100%;
+      p{
+        color:#333;
+        display:table;
+        padding:1%  6.25%;
+        background:white;
+        margin:0 0 0 12.5%;
+        font-size:15px;
+      }
+      h6{
+        color:#dedede;
+        display:table;
+        padding:1%  10%;
+        background:#333;
+        margin:0 0 0 12.5%;
+        font-size:10px;
+      }
     }
   }
   .transform_scale_top{
@@ -164,18 +183,22 @@ body { margin: 0 }
     overflow : hidden
   }
   .Component_img_dom_remove{
-    animation: animate5 0.8s;
-    -moz-animation: animate5 0.8s;	/* Firefox */
-    -webkit-animation: animate5 0.8s;	/* Safari 和 Chrome */
-    -o-animation: animate5 0.8s;	/* Opera */
+    animation: animate5 1s;
+    -moz-animation: animate5 1s;	/* Firefox */
+    -webkit-animation: animate5 1s;	/* Safari 和 Chrome */
+    -o-animation: animate5 1s;	/* Opera */
     width : 0;
   }
   @keyframes animate5{
     0% {
-      width :@ContainerWH;
+      transform:scale(1,1);
+      -webkit-transform:scale(1,1);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(1,1);     /*兼容-moz-引擎浏览器*/
     }
     100%{
-      width :0;
+      transform:scale(0,0);
+      -webkit-transform:scale(0,0);  /*兼容-webkit-引擎浏览器*/
+      -moz-transform:scale(0,0);     /*兼容-moz-引擎浏览器*/
     }
   }
 }

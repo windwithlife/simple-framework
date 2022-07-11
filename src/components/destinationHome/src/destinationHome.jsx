@@ -3,9 +3,9 @@ import React, { useState, useEffect,useImperativeHandle } from 'react'
 import _ from "lodash"
 import '../style/destinationHome.less'
 const transformScale= 0.85;
-const ContainerWH = 1;
+const ContainerWH = 15.4;
 const marginBu = ContainerWH * ( 1 - transformScale);
-const DestinationHome = ({cRef}) => {
+const DestinationHome = ({cRef,getImageRes}) => {
   const [imgList, changeImgList]  = useState([])
   const [endList,changeEndList] = useState([null,null])
   useEffect( () => {
@@ -175,7 +175,7 @@ const DestinationHome = ({cRef}) => {
             }
             if(index2 % 3 === 0){
               marginLeft = {
-                marginLeft : `${marginBu}rem`
+                marginLeft : `${marginBu}%`
               }
             }
             if(item2.before !== item2.now){
@@ -199,9 +199,17 @@ const DestinationHome = ({cRef}) => {
                 backgroundImage : `url(${item2.url})`
                 },
                 ...marginLeft
-              }} key={`imgDom_${index2}`} className={className.join(" ")}>
+              }}
+                   onClick={()=>{
+                     const {city,label,url} = item2;
+                     console.log("item2",{city,label,url})
+                     getImageRes && getImageRes({city,label,url});
+                   }}
+                   key={`imgDom_${index2}`} className={className.join(" ")}>
+                <div className={"Component_img_dom_box_title"}>
                 <p>{item2.city}</p>
                 <h6>{item2.label}</h6>
+                </div>
               </div>
             </>
           })
@@ -221,16 +229,20 @@ const DestinationHome = ({cRef}) => {
                 backgroundImage : `url(${_endList.url})`
               }
             }} key={`imgDom_${_endList}` } className={className.join(" ")}>
-              <p>{_endList.city}</p>
-              <h6>{_endList.label}</h6>
+              <div className={"Component_img_dom_box_title"}>
+                <p>{_endList.city}</p>
+                <h6>{_endList.label}</h6>
+              </div>
             </div>
             </div>
           }
           return <div className={"ComponentDestinationHomeImageList"}
-            style={{ paddingBottom : index === 1 ? "0.2rem" : "0"}}
+            style={{ paddingBottom : index === 1 ? "5%" : "0"}}
             key={`imgList_${index}`}>
-            {imgDom}
-            {endDom}
+            <div className={"ComponentDestinationHomeImageListPosition"}>
+                {imgDom}
+                {endDom}
+            </div>
           </div>
         })
       }
