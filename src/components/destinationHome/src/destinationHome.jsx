@@ -5,86 +5,141 @@ import '../style/destinationHome.less'
 const transformScale= 0.85;
 const ContainerWH = 15.4;
 const marginBu = ContainerWH * ( 1 - transformScale);
-const DestinationHome = ({cRef,getImageRes}) => {
+/*示例：imgListOption ： [
+    [{
+        url : "https://img95.699pic.com/photo/50061/8976.jpg_wh300.jpg",
+        label : "1月热门",
+        city : "上海"
+    },{
+        url : "https://img95.699pic.com/photo/50050/2419.jpg_wh300.jpg",
+        label : "2月热门",
+        city : "成都"
+    },{
+        url : "https://img95.699pic.com/photo/50140/6207.jpg_wh300.jpg",
+        label : "3月热门",
+        city : "昆山"
+    },{
+        url : "https://img95.699pic.com/photo/50046/7214.jpg_wh300.jpg",
+        label : "4月热门",
+        city : "杭州"
+    },{
+        url : "https://img95.699pic.com/photo/50071/9458.jpg_wh300.jpg",
+        label : "5月热门",
+        city : "绍兴"
+    },{
+        url : "https://img95.699pic.com/photo/50090/8892.jpg_wh300.jpg",
+        label : "6月热门",
+        city : "海宁"
+    }],
+    [{
+        url : "https://img95.699pic.com/photo/50038/3442.jpg_wh300.jpg",
+        label : "7月热门",
+        city : "海口"
+    },{
+        url : "https://img95.699pic.com/photo/50132/5516.jpg_wh300.jpg",
+        label : "8月热门",
+        city : "宁波"
+    },{
+        url : "https://img95.699pic.com/photo/50101/0724.jpg_wh300.jpg",
+        label : "9月热门",
+        city : "舟山"
+    },{
+        url : "https://img95.699pic.com/photo/50055/7602.jpg_wh300.jpg",
+        label : "10月热门",
+        city : "台州"
+    },{
+        url : "https://img95.699pic.com/photo/50052/8716.jpg_wh300.jpg",
+        label : "11月热门",
+        city : "三亚"
+    },{
+        url : "https://img95.699pic.com/photo/50055/0952.jpg_wh300.jpg",
+        label : "12月热门",
+        city : "厦门"
+    }]
+]*/
+const DestinationHome = ({cRef,getImageRes,imgListOption}) => {
   const [imgList, changeImgList]  = useState([])
   const [endList,changeEndList] = useState([null,null])
   useEffect( () => {
-    const _image= [
-      [{
-         url : "https://img95.699pic.com/photo/50061/8976.jpg_wh300.jpg",
-         label : "1月热门",
-         city : "上海",
-         before : "big",
-         now : "big"
-      },{
-        url : "https://img95.699pic.com/photo/50050/2419.jpg_wh300.jpg",
-        label : "2月热门",
-        city : "成都",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50140/6207.jpg_wh300.jpg",
-        label : "3月热门",
-        city : "昆山",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50046/7214.jpg_wh300.jpg",
-        label : "4月热门",
-        city : "杭州",
-        before : "big",
-        now : "big"
-      },{
-        url : "https://img95.699pic.com/photo/50071/9458.jpg_wh300.jpg",
-        label : "5月热门",
-        city : "绍兴",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50090/8892.jpg_wh300.jpg",
-        label : "6月热门",
-        city : "海宁",
-        before : "small",
-        now : "small"
-      }],
-      [{
-        url : "https://img95.699pic.com/photo/50038/3442.jpg_wh300.jpg",
-        label : "7月热门",
-        city : "海口",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50132/5516.jpg_wh300.jpg",
-        label : "8月热门",
-        city : "宁波",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50101/0724.jpg_wh300.jpg",
-        label : "9月热门",
-        city : "舟山",
-        before : "big",
-        now : "big"
-      },{
-        url : "https://img95.699pic.com/photo/50055/7602.jpg_wh300.jpg",
-        label : "10月热门",
-        city : "台州",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50052/8716.jpg_wh300.jpg",
-        label : "11月热门",
-        city : "三亚",
-        before : "small",
-        now : "small"
-      },{
-        url : "https://img95.699pic.com/photo/50055/0952.jpg_wh300.jpg",
-        label : "12月热门",
-        city : "厦门",
-        before : "big",
-        now : "big"
-      }]
-    ]
+      let _image = imgListOption;
+      if(imgListOption){
+          let _image = imgListOption;
+      }else{
+          _image= [
+              [{
+                  url : "https://img95.699pic.com/photo/50061/8976.jpg_wh300.jpg",
+                  label : "1月热门",
+                  city : "上海"
+              },{
+                  url : "https://img95.699pic.com/photo/50050/2419.jpg_wh300.jpg",
+                  label : "2月热门",
+                  city : "成都"
+              },{
+                  url : "https://img95.699pic.com/photo/50140/6207.jpg_wh300.jpg",
+                  label : "3月热门",
+                  city : "昆山"
+              },{
+                  url : "https://img95.699pic.com/photo/50046/7214.jpg_wh300.jpg",
+                  label : "4月热门",
+                  city : "杭州"
+              },{
+                  url : "https://img95.699pic.com/photo/50071/9458.jpg_wh300.jpg",
+                  label : "5月热门",
+                  city : "绍兴"
+              },{
+                  url : "https://img95.699pic.com/photo/50090/8892.jpg_wh300.jpg",
+                  label : "6月热门",
+                  city : "海宁"
+              }],
+              [{
+                  url : "https://img95.699pic.com/photo/50038/3442.jpg_wh300.jpg",
+                  label : "7月热门",
+                  city : "海口"
+              },{
+                  url : "https://img95.699pic.com/photo/50132/5516.jpg_wh300.jpg",
+                  label : "8月热门",
+                  city : "宁波"
+              },{
+                  url : "https://img95.699pic.com/photo/50101/0724.jpg_wh300.jpg",
+                  label : "9月热门",
+                  city : "舟山"
+              },{
+                  url : "https://img95.699pic.com/photo/50055/7602.jpg_wh300.jpg",
+                  label : "10月热门",
+                  city : "台州"
+              },{
+                  url : "https://img95.699pic.com/photo/50052/8716.jpg_wh300.jpg",
+                  label : "11月热门",
+                  city : "三亚"
+              },{
+                  url : "https://img95.699pic.com/photo/50055/0952.jpg_wh300.jpg",
+                  label : "12月热门",
+                  city : "厦门"
+              }]
+          ]
+      }
+
+      for(let i = 0 ; i < _image.length ; i++){
+          for(let x = 0 ; x < _image[i].length ; x++){
+              if(i === 0){
+                  if(x % 3 === 0){
+                      _image[i][x].before = "big";
+                      _image[i][x].now = "big";
+                  }else{
+                      _image[i][x].before = "small";
+                      _image[i][x].now = "small";
+                  }
+              }else{
+                  if(x % 3 === 2){
+                      _image[i][x].before = "big";
+                      _image[i][x].now = "big";
+                  }else{
+                      _image[i][x].before = "small";
+                      _image[i][x].now = "small";
+                  }
+              }
+          }
+      }
     changeImgList(_image)
     let time = 1 ;
     const timeInter =  setInterval( () => {
